@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	<h1>Proveedores</h1>
+	<table class="table table-bordered">
+		<thead>
+			<th scope="col">Nombre</th>
+			<th scope="col">Cuit</th>
+			<th scope="col">Correo</th>
+			<th scope="col">Telefono</th>
+			<th scope="col">Direccion</th>
+			<th scope="col">Operaciones</th>
+		</thead>
+		<tbody>
+			{% if list_proveedores %}
+			{% for objects in list_proveedores %}
+			<tr>
+			<td scope="row">{{objects.nombre}}</td>
+			<td scope="row">{{objects.cuit}}</td>
+			<td scope="row">{{objects.correo}}</td>
+			<td scope="row">{{objects.telefono}}</td>
+			<td scope="row">{{objects.direccion}}</td>
+			<td scope="row">
+				<button class="btn btn-secondary" type="submit">Modificar</button>
+				<button class="btn btn-secondary" type="submit">Eliminar</button>
+			</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		{% else %}
+		<td>No hay proveedores</td>
+		{% endif %}
+	</table>
+	
+</div>
+{% endblock %}
