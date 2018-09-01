@@ -10,9 +10,9 @@ def index(request):
 
 
 def add_proveedores(request):
-	if request.method == 'POST':
-		form = add_proveedoresform(request.POST)
-		if form.is_valid():
+    if request.method == 'POST':
+    	form = add_proveedoresform(request.POST)
+    	If form.is_valid():
 			form.save()
 			messages.success(request, 'Se creo el Proveedor!')
 			return redirect('index')
